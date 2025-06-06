@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mission ECET 2026 Quiz</title>
+
+  <link rel="stylesheet" href="../same.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+    <button id="backBtn" onclick="window.location.href='../../index.html'"> ←</button>
+
+<section class="instructions" data-aos="fade-up">
+  <h1>Mission ECET 2026 - Practice Test</h1>
+  <p>You can set a time limit or leave it blank to attempt without timer.</p>
+
+  <label>
+    Set Timer: 
+    <input type="number" id="timerInput" placeholder="e.g. 10" min="1" style="width: 80px;">
+    minutes
+  </label><br><br>
+
+  <label>
+    <input type="checkbox" id="noTimerCheck"> Attempt without timer
+  </label><br><br>
+
+  <button onclick="startQuiz()">Start Quiz</button>
+</section>
+
+<div id="timerDisplay" class="hidden" data-aos="fade-down">
+  ⏳ Time Left: <span id="time">00:00</span>
+</div>
+
+
+  <form id="quizForm" class="quiz hidden" data-aos="fade-up">
+<!-- Q1 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q1. Which of the following is the Cartesian product A × B where A = {1, 2}, B = {a, b}?</h3>
+  <label><input type="radio" name="q1" value="a"> {(1, a), (2, b)}</label><br />
+  <label><input type="radio" name="q1" value="b"> {(1, 2), (a, b)}</label><br />
+  <label><input type="radio" name="q1" value="c"> {(1, a), (1, b), (2, a), (2, b)}</label><br />
+  <label><input type="radio" name="q1" value="d"> {1, 2, a, b}</label>
+</div>
+
+<!-- Q2 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q2. Which of the following is a function?</h3>
+  <label><input type="radio" name="q2" value="a"> {(1,2), (2,2), (1,3)}</label><br />
+  <label><input type="radio" name="q2" value="b"> {(1,2), (2,3), (3,4)}</label><br />
+  <label><input type="radio" name="q2" value="c"> {(1,2), (2,3), (2,4)}</label><br />
+  <label><input type="radio" name="q2" value="d"> {(1,2), (1,3), (2,4)}</label>
+</div>
+
+<!-- Q3 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q3. Domain of f(x) = √(x-2) is:</h3>
+  <label><input type="radio" name="q3" value="a"> x &gt; 2</label><br />
+  <label><input type="radio" name="q3" value="b"> x ≥ 2</label><br />
+  <label><input type="radio" name="q3" value="c"> x ≤ 2</label><br />
+  <label><input type="radio" name="q3" value="d"> x &lt; 2</label>
+</div>
+
+<!-- Q4 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q4. The inverse of the function f(x) = 2x + 3 is:</h3>
+  <label><input type="radio" name="q4" value="a"> f<sup>-1</sup>(x) = (x - 3)/2</label><br />
+  <label><input type="radio" name="q4" value="b"> f<sup>-1</sup>(x) = 2x - 3</label><br />
+  <label><input type="radio" name="q4" value="c"> f<sup>-1</sup>(x) = 2/(x + 3)</label><br />
+  <label><input type="radio" name="q4" value="d"> f<sup>-1</sup>(x) = 3x + 2</label>
+</div>
+
+<!-- Q5 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q5. Which of the following is a proper rational function?</h3>
+  <label><input type="radio" name="q5" value="a"> (x² + 1)/(x + 1)</label><br />
+  <label><input type="radio" name="q5" value="b"> (x + 1)/(x² + 1)</label><br />
+  <label><input type="radio" name="q5" value="c"> (x³ + 2x)/(x + 1)</label><br />
+  <label><input type="radio" name="q5" value="d"> (x² + x + 1)/x</label>
+</div>
+
+<!-- Q6 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q6. Which type of fraction can be resolved into partial fractions?</h3>
+  <label><input type="radio" name="q6" value="a"> Proper rational functions</label><br />
+  <label><input type="radio" name="q6" value="b"> Improper fractions</label><br />
+  <label><input type="radio" name="q6" value="c"> Polynomial expressions</label><br />
+  <label><input type="radio" name="q6" value="d"> All of the above</label>
+</div>
+
+<!-- Q7 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q7. What is the order of matrix A = [[1, 2], [3, 4], [5, 6]]?</h3>
+  <label><input type="radio" name="q7" value="a"> 3 × 2</label><br />
+  <label><input type="radio" name="q7" value="b"> 2 × 3</label><br />
+  <label><input type="radio" name="q7" value="c"> 3 × 3</label><br />
+  <label><input type="radio" name="q7" value="d"> 1 × 6</label>
+</div>
+
+<!-- Q8 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q8. Which matrix is skew-symmetric?</h3>
+  <label><input type="radio" name="q8" value="a"> [[0, 2], [-2, 0]]</label><br />
+  <label><input type="radio" name="q8" value="b"> [[1, 0], [0, 1]]</label><br />
+  <label><input type="radio" name="q8" value="c"> [[2, 3], [3, 2]]</label><br />
+  <label><input type="radio" name="q8" value="d"> [[0, 1], [1, 0]]</label>
+</div>
+
+<!-- Q9 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q9. A × B is defined only when:</h3>
+  <label><input type="radio" name="q9" value="a"> Columns of A = Rows of B</label><br />
+  <label><input type="radio" name="q9" value="b"> Rows of A = Columns of B</label><br />
+  <label><input type="radio" name="q9" value="c"> Both are square matrices</label><br />
+  <label><input type="radio" name="q9" value="d"> A and B have same order</label>
+</div>
+
+<!-- Q10 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q10. The transpose of matrix [[1, 2], [3, 4]] is:</h3>
+  <label><input type="radio" name="q10" value="a"> [[1, 3], [2, 4]]</label><br />
+  <label><input type="radio" name="q10" value="b"> [[2, 1], [4, 3]]</label><br />
+  <label><input type="radio" name="q10" value="c"> [[4, 3], [2, 1]]</label><br />
+  <label><input type="radio" name="q10" value="d"> [[1, 2], [3, 4]]</label>
+</div>
+
+<!-- Q11 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q11. Symmetric + Skew-symmetric matrix always gives:</h3>
+  <label><input type="radio" name="q11" value="a"> A scalar matrix</label><br />
+  <label><input type="radio" name="q11" value="b"> A square matrix</label><br />
+  <label><input type="radio" name="q11" value="c"> Identity matrix</label><br />
+  <label><input type="radio" name="q11" value="d"> Null matrix</label>
+</div>
+
+<!-- Q12 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q12. Determinant of [[1, 0, 0], [0, 1, 0], [0, 0, 1]] is:</h3>
+  <label><input type="radio" name="q12" value="a"> 0</label><br />
+  <label><input type="radio" name="q12" value="b"> 1</label><br />
+  <label><input type="radio" name="q12" value="c"> -1</label><br />
+  <label><input type="radio" name="q12" value="d"> 3</label>
+</div>
+
+<!-- Q13 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q13. Cofactor of element a<sub>11</sub> in matrix [[1, 2], [3, 4]] is:</h3>
+  <label><input type="radio" name="q13" value="a"> 4</label><br />
+  <label><input type="radio" name="q13" value="b"> -4</label><br />
+  <label><input type="radio" name="q13" value="c"> -2</label><br />
+  <label><input type="radio" name="q13" value="d"> 3</label>
+</div>
+
+<!-- Q14 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q14. A matrix is singular if its determinant is:</h3>
+  <label><input type="radio" name="q14" value="a"> 1</label><br />
+  <label><input type="radio" name="q14" value="b"> 0</label><br />
+  <label><input type="radio" name="q14" value="c"> Negative</label><br />
+  <label><input type="radio" name="q14" value="d"> Undefined</label>
+</div>
+
+<!-- Q15 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q15. The adjoint of a matrix is the:</h3>
+  <label><input type="radio" name="q15" value="a"> Transpose of cofactor matrix</label><br />
+  <label><input type="radio" name="q15" value="b"> Transpose of matrix</label><br />
+  <label><input type="radio" name="q15" value="c"> Cofactor of matrix</label><br />
+  <label><input type="radio" name="q15" value="d"> Inverse of matrix</label>
+</div>
+
+<!-- Q16 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q16. A matrix is non-singular if:</h3>
+  <label><input type="radio" name="q16" value="a"> Determinant = 0</label><br />
+  <label><input type="radio" name="q16" value="b"> Determinant ≠ 0</label><br />
+  <label><input type="radio" name="q16" value="c"> It is square</label><br />
+  <label><input type="radio" name="q16" value="d"> All elements are positive</label>
+</div>
+
+<!-- Q17 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q17. Adjoint and inverse exist only for:</h3>
+  <label><input type="radio" name="q17" value="a"> Singular matrices</label><br />
+  <label><input type="radio" name="q17" value="b"> Non-singular matrices</label><br />
+  <label><input type="radio" name="q17" value="c"> Rectangular matrices</label><br />
+  <label><input type="radio" name="q17" value="d"> Skew matrices</label>
+</div>
+
+<!-- Q18 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q18. Cramer’s Rule can be applied when:</h3>
+  <label><input type="radio" name="q18" value="a"> Determinant = 0</label><br />
+  <label><input type="radio" name="q18" value="b"> Determinant ≠ 0</label><br />
+  <label><input type="radio" name="q18" value="c"> Equations are linear</label><br />
+  <label><input type="radio" name="q18" value="d"> All of the above</label>
+</div>
+
+<!-- Q19 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q19. In solving equations using matrix inversion method, the inverse is multiplied with:</h3>
+  <label><input type="radio" name="q19" value="a"> RHS column matrix</label><br />
+  <label><input type="radio" name="q19" value="b"> LHS coefficient matrix</label><br />
+  <label><input type="radio" name="q19" value="c"> Determinant</label><br />
+  <label><input type="radio" name="q19" value="d"> Adjoint matrix</label>
+</div>
+
+<!-- Q20 -->
+<div class="question" data-aos="fade-right">
+  <h3>Q20. The inverse of a 3x3 matrix A is denoted by:</h3>
+  <label><input type="radio" name="q20" value="a"> A*</label><br />
+  <label><input type="radio" name="q20" value="b"> A^T</label><br />
+  <label><input type="radio" name="q20" value="c"> A⁻¹</label><br />
+  <label><input type="radio" name="q20" value="d"> adj(A)</label>
+</div>
+
+    <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+  </form>
+
+  <section id="resultSection" class="result hidden" data-aos="fade-up">
+    <h2>Quiz Results</h2>
+    <p id="scoreDisplay"></p>
+    <div id="explanations"></div>
+    <button id="finishBtn" style="margin-top: 20px;">Finish</button>
+
+  </section>
+  <div id="saveDataMessage" style="margin-top:10px; font-weight:bold;"></div>
+
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+<!-- Before loading quiz.js -->
+<script>
+window.quizAnswers = {
+  q1: "a",  // Set, Ordered pair, Cartesian product basics
+  q2: "b",  // Function vs relation
+  q3: "a",  // Finding domain and range
+  q4: "b",  // One-one and onto functions
+  q5: "a",  // Inverse of f(x) = 2x + 3 → f⁻¹(x) = (x - 3)/2
+  q6: "c",  // Rational, proper and improper fraction
+  q7: "b",  // Partial fraction with linear non-repeated factors
+  q8: "c",  // Partial fractions with repeated factors
+  q9: "a",  // Matrix definition and order
+  q10: "d", // Matrix addition and scalar multiplication
+  q11: "c", // Matrix multiplication rule
+  q12: "b", // Transpose of a matrix
+  q13: "d", // Symmetric and skew-symmetric matrix decomposition
+  q14: "a", // Determinant of 3x3 matrix using Laplace expansion
+  q15: "c", // Singular vs non-singular matrix
+  q16: "b", // Finding inverse using adjoint/determinant
+  q17: "a", // Cramer’s Rule
+  q18: "d", // Solving using matrix inversion
+  q19: "b", // Identity matrix
+  q20: "a"  // Trace and elements of a 3x3 matrix
+};
+
+
+window.quizExplanations = {
+  q1: "A set is a collection of well-defined elements. An ordered pair (a, b) represents two elements in a specific order. The Cartesian product A × B is the set of all ordered pairs (a, b) where a ∈ A and b ∈ B.",
+  
+  q2: "A function is a special type of relation where each input (x) has only one output (y). For example, f(x) = x² is a function because every x value has a unique square value.",
+  
+  q3: "To find the domain, exclude values that make the function undefined (like dividing by zero). For f(x) = 1/(x-2), x = 2 is not allowed, so domain is all real numbers except 2. Range depends on possible output values.",
+  
+  q4: "A function is one-one (injective) if different inputs give different outputs. For f(x) = 2x+3, if x1 ≠ x2, then f(x1) ≠ f(x2). It's onto (surjective) if every possible output value has a corresponding input.",
+  
+  q5: "To find the inverse of f(x) = 2x+3, replace f(x) with y: y = 2x + 3. Swap x and y: x = 2y + 3. Solve for y: y = (x - 3)/2. So, f⁻¹(x) = (x - 3)/2.",
+  
+  q6: "A rational function is a ratio of two polynomials. It’s proper if degree of numerator < degree of denominator. Improper if numerator degree ≥ denominator degree.",
+  
+  q7: "To resolve into partial fractions: if f(x) = (2x+5)/((x+1)(x+2)), write it as A/(x+1) + B/(x+2). Multiply both sides by (x+1)(x+2), substitute values of x to find A and B.",
+  
+  q8: "For repeated factors like (x+1)², write as A/(x+1) + B/(x+1)². Multiply and simplify, then substitute values of x or compare coefficients to solve for A and B.",
+  
+  q9: "A matrix is an array of numbers. If it has m rows and n columns, it's called an m×n matrix. A 3x2 matrix has 3 rows and 2 columns.",
+  
+  q10: "Two matrices can be added or subtracted only if they have the same dimensions. For scalar multiplication, each element is multiplied by the scalar.",
+  
+  q11: "Matrix multiplication is done by taking dot products of rows and columns. For example, if A is 2x3 and B is 3x2, then AB is defined and will be a 2x2 matrix.",
+  
+  q12: "The transpose of a matrix is obtained by flipping rows into columns. For example, the transpose of [[1, 2], [3, 4]] is [[1, 3], [2, 4]].",
+  
+  q13: "A symmetric matrix satisfies Aᵀ = A. A skew-symmetric matrix satisfies Aᵀ = -A. Any square matrix can be written as A = (A + Aᵀ)/2 + (A - Aᵀ)/2, which are symmetric and skew-symmetric parts.",
+  
+  q14: "To find determinant of a 3x3 matrix, use Laplace expansion: expand along a row or column using minors and cofactors. Properties like switching rows or having a row of zeros make det = 0.",
+  
+  q15: "A matrix is singular if det = 0, so it has no inverse. If det ≠ 0, it's non-singular and has an inverse. To find the inverse, use the formula A⁻¹ = adj(A)/det(A).",
+  
+  q16: "The adjoint of a matrix is the transpose of its cofactor matrix. To find inverse: 1) Find determinant. 2) Find matrix of cofactors. 3) Transpose it to get adjoint. 4) Divide by determinant.",
+  
+  q17: "Cramer’s Rule uses determinants to solve a system of equations. Replace one column of the coefficient matrix with the constant column to get Dx, Dy, Dz. Then x = Dx/D, etc., provided D ≠ 0.",
+  
+  q18: "To solve using matrix inversion: form AX = B. Find inverse of A, then multiply both sides: X = A⁻¹B. This gives solution for variables x, y, z.",
+  
+  q19: "The identity matrix is a square matrix with 1s on the diagonal and 0s elsewhere. Any matrix multiplied by identity remains unchanged, i.e., AI = IA = A.",
+  
+  q20: "A 3x3 matrix has 9 elements. The main diagonal runs from top-left to bottom-right. Trace is the sum of diagonal elements. Only square matrices have trace."
+};
+
+</script>
+
+<script type="module" src="../same.js"></script>
+</body>
+</html>

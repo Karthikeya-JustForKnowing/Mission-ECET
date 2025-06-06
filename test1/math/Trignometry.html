@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mission ECET 2026 Quiz</title>
+
+    <link rel="stylesheet" href="../same.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <section class="instructions" data-aos="fade-up">
+        <h1>Mission ECET 2026 - Practice Test</h1>
+        <p>You can set a time limit or leave it blank to attempt without timer.</p>
+
+        <label>
+            Set Timer:
+            <input type="number" id="timerInput" placeholder="e.g. 10" min="1" style="width: 80px;">
+            minutes
+        </label><br><br>
+
+        <label>
+            <input type="checkbox" id="noTimerCheck"> Attempt without timer
+        </label><br><br>
+
+        <button onclick="startQuiz()">Start Quiz</button>
+    </section>
+
+    <div id="timerDisplay" class="hidden" data-aos="fade-down">
+        ⏳ Time Left: <span id="time">00:00</span>
+    </div>
+
+
+    <form id="quizForm" class="quiz hidden" data-aos="fade-up">
+        <div class="question" data-aos="fade-right">
+            <h3>Q1. What is the value of sin 90°?</h3>
+            <label><input type="radio" name="q1" value="a"> 0</label><br />
+            <label><input type="radio" name="q1" value="b"> 1</label><br />
+            <label><input type="radio" name="q1" value="c"> -1</label><br />
+            <label><input type="radio" name="q1" value="d"> Undefined</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q2. Which of the following functions is periodic with period π?</h3>
+            <label><input type="radio" name="q2" value="a"> sin x</label><br />
+            <label><input type="radio" name="q2" value="b"> cos x</label><br />
+            <label><input type="radio" name="q2" value="c"> tan x</label><br />
+            <label><input type="radio" name="q2" value="d"> sec x</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q3. What is the value of sin(150°)?</h3>
+            <label><input type="radio" name="q3" value="a"> 1/2</label><br />
+            <label><input type="radio" name="q3" value="b"> √3/2</label><br />
+            <label><input type="radio" name="q3" value="c"> -1/2</label><br />
+            <label><input type="radio" name="q3" value="d"> -√3/2</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q4. sin(A + B) is equal to:</h3>
+            <label><input type="radio" name="q4" value="a"> sin A + sin B</label><br />
+            <label><input type="radio" name="q4" value="b"> sin A cos B + cos A sin B</label><br />
+            <label><input type="radio" name="q4" value="c"> sin A cos B − cos A sin B</label><br />
+            <label><input type="radio" name="q4" value="d"> cos A cos B − sin A sin B</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q5. cos(750°) is equal to:</h3>
+            <label><input type="radio" name="q5" value="a"> 1/2</label><br />
+            <label><input type="radio" name="q5" value="b"> √3/2</label><br />
+            <label><input type="radio" name="q5" value="c"> -√3/2</label><br />
+            <label><input type="radio" name="q5" value="d"> -1/2</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q6. sin²A − sin²B equals:</h3>
+            <label><input type="radio" name="q6" value="a"> sin(A+B) sin(A−B)</label><br />
+            <label><input type="radio" name="q6" value="b"> cos(A+B) cos(A−B)</label><br />
+            <label><input type="radio" name="q6" value="c"> tan(A+B) tan(A−B)</label><br />
+            <label><input type="radio" name="q6" value="d"> sin A sin B</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q7. The formula for sin(2A) is:</h3>
+            <label><input type="radio" name="q7" value="a"> 2 sin² A</label><br />
+            <label><input type="radio" name="q7" value="b"> 2 sin A cos A</label><br />
+            <label><input type="radio" name="q7" value="c"> sin² A − cos² A</label><br />
+            <label><input type="radio" name="q7" value="d"> 2 cos A sin A</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q8. sin²A can also be written as:</h3>
+            <label><input type="radio" name="q8" value="a"> (1 + cos2A)/2</label><br />
+            <label><input type="radio" name="q8" value="b"> (1 − cos2A)/2</label><br />
+            <label><input type="radio" name="q8" value="c"> (1 − sin2A)/2</label><br />
+            <label><input type="radio" name="q8" value="d"> cos²A</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q9. The formula sin A + sin B equals:</h3>
+            <label><input type="radio" name="q9" value="a"> 2 sin(A−B)/2 cos(A+B)/2</label><br />
+            <label><input type="radio" name="q9" value="b"> 2 sin(A+B)/2 cos(A−B)/2</label><br />
+            <label><input type="radio" name="q9" value="c"> 2 sin(A+B)/2 cos(A+B)/2</label><br />
+            <label><input type="radio" name="q9" value="d"> 2 sin(A−B)/2 sin(A+B)/2</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q10. What is the domain of sin⁻¹(x)?</h3>
+            <label><input type="radio" name="q10" value="a"> x ∈ R</label><br />
+            <label><input type="radio" name="q10" value="b"> x ∈ [−1, 1]</label><br />
+            <label><input type="radio" name="q10" value="c"> x ∈ [0, π]</label><br />
+            <label><input type="radio" name="q10" value="d"> x ∈ (−∞, ∞)</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q11. The value of sin⁻¹x + cos⁻¹x is:</h3>
+            <label><input type="radio" name="q11" value="a"> 0</label><br />
+            <label><input type="radio" name="q11" value="b"> π/2</label><br />
+            <label><input type="radio" name="q11" value="c"> π</label><br />
+            <label><input type="radio" name="q11" value="d"> 2π</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q12. Which of the following is correct?</h3>
+            <label><input type="radio" name="q12" value="a"> tan⁻¹x + cot⁻¹x = π</label><br />
+            <label><input type="radio" name="q12" value="b"> tan⁻¹x + cot⁻¹x = π/2</label><br />
+            <label><input type="radio" name="q12" value="c"> tan⁻¹x − cot⁻¹x = 0</label><br />
+            <label><input type="radio" name="q12" value="d"> tan⁻¹x * cot⁻¹x = 1</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q13. General solution of sin x = k is:</h3>
+            <label><input type="radio" name="q13" value="a"> x = sin⁻¹(k) + 2nπ</label><br />
+            <label><input type="radio" name="q13" value="b"> x = (−1)ⁿ sin⁻¹(k) + nπ</label><br />
+            <label><input type="radio" name="q13" value="c"> x = sin⁻¹(k) + nπ</label><br />
+            <label><input type="radio" name="q13" value="d"> x = cos⁻¹(k) + 2nπ</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q14. The equation a sin²x + b sin x + c = 0 is solved by:</h3>
+            <label><input type="radio" name="q14" value="a"> Substitution method</label><br />
+            <label><input type="radio" name="q14" value="b"> Taking sin x as variable</label><br />
+            <label><input type="radio" name="q14" value="c"> Quadratic formula</label><br />
+            <label><input type="radio" name="q14" value="d"> All of the above</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q15. In any triangle, the sine rule is:</h3>
+            <label><input type="radio" name="q15" value="a"> a/sin A = b/cos B = c/sin C</label><br />
+            <label><input type="radio" name="q15" value="b"> a/sin A = b/sin B = c/sin C</label><br />
+            <label><input type="radio" name="q15" value="c"> a/sin A = b/sin B = c/cos C</label><br />
+            <label><input type="radio" name="q15" value="d"> a/cos A = b/cos B = c/cos C</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q16. Area of triangle using sine rule is:</h3>
+            <label><input type="radio" name="q16" value="a"> (1/2) ab cos C</label><br />
+            <label><input type="radio" name="q16" value="b"> (1/2) ab sin C</label><br />
+            <label><input type="radio" name="q16" value="c"> ab tan C</label><br />
+            <label><input type="radio" name="q16" value="d"> abc/2</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q17. A complex number is of the form:</h3>
+            <label><input type="radio" name="q17" value="a"> a + b</label><br />
+            <label><input type="radio" name="q17" value="b"> a + bi</label><br />
+            <label><input type="radio" name="q17" value="c"> ai + b</label><br />
+            <label><input type="radio" name="q17" value="d"> ab + i</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q18. The modulus of a complex number z = a + bi is:</h3>
+            <label><input type="radio" name="q18" value="a"> a + b</label><br />
+            <label><input type="radio" name="q18" value="b"> √(a² − b²)</label><br />
+            <label><input type="radio" name="q18" value="c"> √(a² + b²)</label><br />
+            <label><input type="radio" name="q18" value="d"> ab</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q19. The exponential form of complex number is:</h3>
+            <label><input type="radio" name="q19" value="a"> r + iθ</label><br />
+            <label><input type="radio" name="q19" value="b"> r(cosθ + i sinθ)</label><br />
+            <label><input type="radio" name="q19" value="c"> re<sup>iθ</sup></label><br />
+            <label><input type="radio" name="q19" value="d"> iθ</label>
+        </div>
+
+        <div class="question" data-aos="fade-right">
+            <h3>Q20. Which of the following is the conjugate of z = a + bi?</h3>
+            <label><input type="radio" name="q20" value="a"> −a + bi</label><br />
+            <label><input type="radio" name="q20" value="b"> a − bi</label><br />
+            <label><input type="radio" name="q20" value="c"> −a − bi</label><br />
+            <label><input type="radio" name="q20" value="d"> a + bi</label>
+        </div>
+
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+
+    <section id="resultSection" class="result hidden" data-aos="fade-up">
+        <h2>Quiz Results</h2>
+        <p id="scoreDisplay"></p>
+        <div id="explanations"></div>
+        <button id="finishBtn" style="margin-top: 20px;">Finish</button>
+
+    </section>
+    <div id="saveDataMessage" style="margin-top:10px; font-weight:bold;"></div>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Before loading quiz.js -->
+    <script>
+        window.quizAnswers = {
+            q1: "b",  // sin 90° = 1
+            q2: "c",  // tan x has period π
+            q3: "a",  // sin 150° = 1/2
+            q4: "b",  // sin(A + B) = sin A cos B + cos A sin B
+            q5: "b",  // cos 750° = cos(750 - 720) = cos 30° = √3/2 (But option a is 1/2, option b is √3/2)
+            // Wait, options: a=1/2, b=√3/2, so correct answer is b
+            q6: "a",  // sin²A - sin²B = sin(A+B) sin(A−B)
+            q7: "b",  // sin 2A = 2 sin A cos A
+            q8: "b",  // sin²A = (1 - cos 2A)/2
+            q9: "b",  // sin A + sin B = 2 sin((A+B)/2) cos((A−B)/2)
+            q10: "b", // Domain of sin⁻¹x is [-1,1]
+            q11: "b", // sin⁻¹x + cos⁻¹x = π/2
+            q12: "a", // tan⁻¹x + cot⁻¹x = π
+            q13: "b", // General solution: x = (−1)^n sin⁻¹(k) + nπ
+            q14: "d", // Solved by all methods (Substitution, Taking sin x as variable, Quadratic formula)
+            q15: "b", // Sine rule: a/sin A = b/sin B = c/sin C
+            q16: "b", // Area = (1/2) ab sin C
+            q17: "b", // Complex number form: a + bi
+            q18: "c", // Modulus = √(a² + b²)
+            q19: "c", // Exponential form: r e^(iθ)
+            q20: "b"  // Conjugate of a + bi is a − bi
+        };
+
+
+
+        window.quizExplanations = {
+            Q1: "sin 90° = 1 because sine represents the vertical coordinate of a point on the unit circle. At 90°, the point lies at the top of the circle (0,1), so the y-value, which is sine, reaches its maximum value of 1.",
+            Q2: "The function tan x has period π because tangent is defined as sin x divided by cos x. Both sine and cosine repeat every 2π, but tangent repeats every π due to the periodicity and the fact that tan(x + π) = tan x. This happens because adding π rotates the point halfway around the circle, causing the ratio sin x / cos x to repeat its values every π.",
+            Q3: "To find sin 150°, use the identity sin(180° - θ) = sin θ. Since 150° = 180° - 30°, sin 150° equals sin 30°, which is 1/2. This works because sine is positive in the second quadrant (90° to 180°), and the sine values are symmetric about 90°.",
+            Q4: "The sine addition formula sin(A + B) = sin A cos B + cos A sin B comes from considering the coordinates on the unit circle and the angle sum identities. It expresses the sine of the sum of two angles as a combination of sine and cosine of the individual angles, which is essential for solving trigonometric equations and simplifying expressions.",
+            Q5: "To find cos 750°, first reduce the angle modulo 360° since cosine is periodic with period 360°. 750° − 2×360° = 750° − 720° = 30°. So, cos 750° = cos 30°, which equals √3/2. This simplifies calculations by using known cosine values within one full rotation.",
+            Q6: "The identity sin²A − sin²B = sin(A + B) sin(A − B) derives from applying the difference of squares formula to sine squared terms and rewriting using product-to-sum formulas. It transforms a difference of squares into a product of sines of sums and differences of angles, useful in integration and simplifying trigonometric expressions.",
+            Q7: "The double-angle formula sin(2A) = 2 sin A cos A is derived from the sine addition formula by setting B = A. This formula allows expressing sine of twice an angle in terms of sine and cosine of the original angle, which simplifies solving equations and integration involving double angles.",
+            Q8: "The power-reduction identity sin²A = (1 − cos 2A) / 2 expresses the square of sine in terms of the cosine of double the angle. This is useful in calculus and simplifying integrals by reducing powers of sine functions to linear terms involving cosine.",
+            Q9: "The sum-to-product formula sin A + sin B = 2 sin((A + B)/2) cos((A − B)/2) rewrites the sum of two sine functions as a product. This helps simplify trigonometric expressions and solve equations by converting sums into products which are easier to handle.",
+            Q10: "The domain of sin⁻¹(x) (arcsine) is the interval [−1, 1] because sine function only outputs values within this range. The inverse sine can only accept inputs that are possible sine outputs, thus the domain restriction ensures real-valued results.",
+            Q11: "The identity sin⁻¹x + cos⁻¹x = π/2 reflects that the arcsine and arccosine functions are complementary. For any x in [−1,1], the angle whose sine is x and the angle whose cosine is x add up to 90° or π/2 radians, reflecting the fundamental complementary angle relationship in right triangles.",
+            Q12: "tan⁻¹x + cot⁻¹x = π/2 because inverse tangent and inverse cotangent represent complementary angles in a right triangle. Since tangent and cotangent are reciprocals, their inverse functions add up to π/2, reflecting this geometric fact.",
+            Q13: "The general solution for sin x = k is x = (−1)ⁿ sin⁻¹(k) + nπ, where n is any integer. This captures all angles that satisfy the equation by using the symmetry of the sine function around multiples of π, accounting for both positive and negative values of the sine inverse.",
+            Q14: "To solve the quadratic trigonometric equation a sin²x + b sin x + c = 0, substitute t = sin x to convert it into a standard quadratic form a t² + b t + c = 0. Solve for t using the quadratic formula, then find x by taking arcsine of the valid solutions within the domain [−1, 1].",
+            Q15: "The Sine Rule a/sin A = b/sin B = c/sin C relates the lengths of sides of any triangle to the sines of their opposite angles. It is derived from the law of sines, useful for solving triangles when two angles and one side or two sides and a non-included angle are known.",
+            Q16: "The area of a triangle = (1/2) ab sin C comes from considering two sides a and b and the included angle C. Multiplying the two sides with the sine of the included angle gives the height times base divided by 2, which is the area of the triangle.",
+            Q17: "A complex number is expressed as a + bi, where a is the real part and b is the imaginary coefficient, and i is the imaginary unit satisfying i² = −1. Complex numbers extend the real number system to include solutions to equations like x² + 1 = 0.",
+            Q18: "The modulus of a complex number z = a + bi is given by |z| = √(a² + b²), representing the distance of the point (a, b) from the origin in the complex plane, analogous to the length of the vector representing the complex number.",
+            Q19: "The exponential form of a complex number is z = r e^{iθ}, where r is the modulus and θ is the argument (angle) of the complex number. Euler's formula e^{iθ} = cos θ + i sin θ connects complex exponentials with trigonometry, making multiplication and division of complex numbers simpler in polar form.",
+            Q20: "The conjugate of a complex number z = a + bi is z̅ = a − bi. Conjugation reflects the complex number across the real axis in the complex plane and is used in division of complex numbers and in finding the modulus squared, since z × z̅ = a² + b²."
+
+        }
+
+    </script>
+
+    <script type="module" src="../same.js"></script>
+</body>
+
+</html>

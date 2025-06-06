@@ -1,0 +1,243 @@
+:root {
+  --green: #4caf50;
+  --green-dark: #388e3c;
+  --bg: #f7f9fb;
+  --card-bg: #ffffff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --radius: 16px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  position: relative;
+}
+
+.profile-wrapper {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.profile-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-header {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.avatar-section {
+  position: relative;
+}
+
+.avatar-section img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--green);
+}
+
+.avatar-section button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.user-basic-info h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+#userPhoto {
+  width: 50px;            /* Adjust width */
+  height: 50px;           /* Adjust height */
+  object-fit: cover;       /* Ensures image covers area without stretching */
+  border-radius: 50%;      /* Makes the image circular */
+  border: 2px solid #4CAF50; /* Optional: green border */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
+}
+
+#changePhotoBtn{
+  width: 15px;
+  height:15px;
+}
+.user-basic-info p {
+  font-size: 1rem;
+  color: #777;
+}
+
+.profile-details .field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.profile-details .field label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.profile-details .field input,
+.profile-details .field textarea {
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 6px #4caf5060;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.save-btn,
+.logout-btn {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.save-btn {
+  background: linear-gradient(to right, #43e97b, #38f9d7);
+  color: #fff;
+  font-weight: bold;
+}
+
+.logout-btn {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  color: white;
+  font-weight: bold;
+}
+
+.save-btn:hover {
+  opacity: 0.9;
+}
+
+.logout-btn:hover {
+  opacity: 0.9;
+}
+
+/* Test Results */
+.test-section {
+  margin-top: 3rem;
+}
+
+.test-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--green-dark);
+  border-bottom: 2px solid #4caf50;
+  padding-bottom: 0.3rem;
+}
+
+.test-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.test-result-card {
+  background: #ffffff;
+  padding: 1.2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.test-result-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.test-result-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  margin-bottom: 0.4rem;
+}
+
+.test-result-info {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.test-result-score {
+  margin-top: 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #2e7d32;
+  text-align: right;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  background: var(--green);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  box-shadow: var(--shadow);
+  transition: background 0.3s ease;
+  z-index: 1000;
+}
+
+.back-button:hover {
+  background: var(--green-dark);
+}
+
+ #dailyQuizResults {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+ }
+/* Responsive */
+@media (max-width: 600px) {
+  .buttons {
+    flex-direction: column;
+  }
+
+  .save-btn,
+  .logout-btn {
+    width: 100%;
+  }
+}

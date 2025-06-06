@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mission ECET 2026 Quiz</title>
+
+    <link rel="stylesheet" href="../same.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <section class="instructions" data-aos="fade-up">
+        <h1>Mission ECET 2026 - Practice Test</h1>
+        <p>You can set a time limit or leave it blank to attempt without timer.</p>
+
+        <label>
+            Set Timer:
+            <input type="number" id="timerInput" placeholder="e.g. 10" min="1" style="width: 80px;">
+            minutes
+        </label><br><br>
+
+        <label>
+            <input type="checkbox" id="noTimerCheck"> Attempt without timer
+        </label><br><br>
+
+        <button onclick="startQuiz()">Start Quiz</button>
+    </section>
+
+    <div id="timerDisplay" class="hidden" data-aos="fade-down">
+        ⏳ Time Left: <span id="time">00:00</span>
+    </div>
+
+
+    <form id="quizForm" class="quiz hidden" data-aos="fade-up">
+<div class="question" data-aos="fade-right">
+    <h3>Q1. Evaluate the limit: lim (x → 0) of (sin 3x) / x</h3>
+    <label><input type="radio" name="q1" value="a"> 0</label><br />
+    <label><input type="radio" name="q1" value="b"> 1</label><br />
+    <label><input type="radio" name="q1" value="c"> 3</label><br />
+    <label><input type="radio" name="q1" value="d"> Does not exist</label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q2. Evaluate the limit: lim (x → 0) of (1 − cos 2x) / x<sup>2</sup></h3>
+    <label><input type="radio" name="q2" value="a"> 1</label><br />
+    <label><input type="radio" name="q2" value="b"> 2</label><br />
+    <label><input type="radio" name="q2" value="c"> 4</label><br />
+    <label><input type="radio" name="q2" value="d"> 0</label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q3. Evaluate the limit: lim (x → ∞) of (3x<sup>2</sup> + 5) / (2x<sup>2</sup> − 7)</h3>
+    <label><input type="radio" name="q3" value="a"> 0</label><br />
+    <label><input type="radio" name="q3" value="b"> 3/2</label><br />
+    <label><input type="radio" name="q3" value="c"> ∞</label><br />
+    <label><input type="radio" name="q3" value="d"> Does not exist</label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q4. The standard limit lim (x → 0) of (sin x) / x equals:</h3>
+    <label><input type="radio" name="q4" value="a"> 0</label><br />
+    <label><input type="radio" name="q4" value="b"> 1</label><br />
+    <label><input type="radio" name="q4" value="c"> Does not exist</label><br />
+    <label><input type="radio" name="q4" value="d"> ∞</label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q5. A function f(x) is continuous at x = a if:</h3>
+    <label><input type="radio" name="q5" value="a"> lim (x → a) f(x) exists and equals f(a)</label><br />
+    <label><input type="radio" name="q5" value="b"> f(a) does not exist</label><br />
+    <label><input type="radio" name="q5" value="c"> lim (x → a) f(x) does not exist</label><br />
+    <label><input type="radio" name="q5" value="d"> f(x) is discontinuous at a</label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q6. The derivative of y = x<sup>2</sup> using first principle is:</h3>
+    <label><input type="radio" name="q6" value="a"> 2x</label><br />
+    <label><input type="radio" name="q6" value="b"> x</label><br />
+    <label><input type="radio" name="q6" value="c"> x<sup>2</sup></label><br />
+    <label><input type="radio" name="q6" value="d"> 1</label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q7. The derivative notation dy/dx denotes:</h3>
+    <label><input type="radio" name="q7" value="a"> Derivative of y with respect to x</label><br />
+    <label><input type="radio" name="q7" value="b"> Derivative of x with respect to y</label><br />
+    <label><input type="radio" name="q7" value="c"> Second derivative of y</label><br />
+    <label><input type="radio" name="q7" value="d"> None of these</label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q8. The derivative of y = e<sup>x</sup> using first principle is:</h3>
+    <label><input type="radio" name="q8" value="a"> e<sup>x</sup></label><br />
+    <label><input type="radio" name="q8" value="b"> xe<sup>x</sup></label><br />
+    <label><input type="radio" name="q8" value="c"> 1</label><br />
+    <label><input type="radio" name="q8" value="d"> 0</label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q9. The derivative of y = sin x is:</h3>
+    <label><input type="radio" name="q9" value="a"> cos x</label><br />
+    <label><input type="radio" name="q9" value="b"> −cos x</label><br />
+    <label><input type="radio" name="q9" value="c"> sin x</label><br />
+    <label><input type="radio" name="q9" value="d"> −sin x</label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q10. The derivative of y = ln x is:</h3>
+    <label><input type="radio" name="q10" value="a"> 1/x</label><br />
+    <label><input type="radio" name="q10" value="b"> ln x</label><br />
+    <label><input type="radio" name="q10" value="c"> x</label><br />
+    <label><input type="radio" name="q10" value="d"> e<sup>x</sup></label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q11. The product rule for differentiation of functions u(x) and v(x) is:</h3>
+    <label><input type="radio" name="q11" value="a"> (du/dx)(dv/dx)</label><br />
+    <label><input type="radio" name="q11" value="b"> u(dv/dx) + v(du/dx)</label><br />
+    <label><input type="radio" name="q11" value="c"> u × v</label><br />
+    <label><input type="radio" name="q11" value="d"> (u + v)<sup>2</sup></label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q12. The chain rule is used to differentiate:</h3>
+    <label><input type="radio" name="q12" value="a"> A product of two functions</label><br />
+    <label><input type="radio" name="q12" value="b"> A function of a function</label><br />
+    <label><input type="radio" name="q12" value="c"> Sum of two functions</label><br />
+    <label><input type="radio" name="q12" value="d"> A constant function</label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q13. If x = cos t and y = sin t, then dy/dx is given by:</h3>
+    <label><input type="radio" name="q13" value="a"> (dy/dt) / (dx/dt)</label><br />
+    <label><input type="radio" name="q13" value="b"> (dx/dt) / (dy/dt)</label><br />
+    <label><input type="radio" name="q13" value="c"> dy/dt + dx/dt</label><br />
+    <label><input type="radio" name="q13" value="d"> dy/dt − dx/dt</label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q14. The implicit differentiation of equation x<sup>2</sup> + y<sup>2</sup> = 25 gives dy/dx as:</h3>
+    <label><input type="radio" name="q14" value="a"> −x / y</label><br />
+    <label><input type="radio" name="q14" value="b"> x / y</label><br />
+    <label><input type="radio" name="q14" value="c"> y / x</label><br />
+    <label><input type="radio" name="q14" value="d"> −y / x</label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q15. Logarithmic differentiation is helpful to differentiate functions of the form:</h3>
+    <label><input type="radio" name="q15" value="a"> [f(x)]<sup>g(x)</sup></label><br />
+    <label><input type="radio" name="q15" value="b"> f(x) + g(x)</label><br />
+    <label><input type="radio" name="q15" value="c"> f(x) × g(x)</label><br />
+    <label><input type="radio" name="q15" value="d"> f(x) / g(x)</label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q16. The second derivative of y = x<sup>3</sup> is:</h3>
+    <label><input type="radio" name="q16" value="a"> 6x</label><br />
+    <label><input type="radio" name="q16" value="b"> 3x<sup>2</sup></label><br />
+    <label><input type="radio" name="q16" value="c"> 9x<sup>2</sup></label><br />
+    <label><input type="radio" name="q16" value="d"> 0</label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q17. Partial derivatives are derivatives of functions of:</h3>
+    <label><input type="radio" name="q17" value="a"> Single variable only</label><br />
+    <label><input type="radio" name="q17" value="b"> Several variables</label><br />
+    <label><input type="radio" name="q17" value="c"> Constants only</label><br />
+    <label><input type="radio" name="q17" value="d"> None of these</label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q18. The partial derivative ∂f/∂x means:</h3>
+    <label><input type="radio" name="q18" value="a"> Differentiate f with respect to x treating other variables constant</label><br />
+    <label><input type="radio" name="q18" value="b"> Differentiate f with respect to all variables</label><br />
+    <label><input type="radio" name="q18" value="c"> Differentiate f with respect to y</label><br />
+    <label><input type="radio" name="q18" value="d"> Differentiate f twice</label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q19. The mixed second order partial derivative ∂²f / ∂x ∂y means:</h3>
+    <label><input type="radio" name="q19" value="a"> Differentiate first with respect to y, then x</label><br />
+    <label><input type="radio" name="q19" value="b"> Differentiate first with respect to x, then y</label><br />
+    <label><input type="radio" name="q19" value="c"> Differentiate twice with respect to x</label><br />
+    <label><input type="radio" name="q19" value="d"> Differentiate twice with respect to y</label>
+</div>
+
+<div class="question" data-aos="fade-right">
+    <h3>Q20. The second order partial derivative ∂²f / ∂x² means:</h3>
+    <label><input type="radio" name="q20" value="a"> Differentiate f twice with respect to x</label><br />
+    <label><input type="radio" name="q20" value="b"> Differentiate f with respect to x then y</label><br />
+    <label><input type="radio" name="q20" value="c"> Differentiate f once with respect to x</label><br />
+    <label><input type="radio" name="q20" value="d"> Differentiate f twice with respect to y</label>
+</div>
+
+
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+
+    <section id="resultSection" class="result hidden" data-aos="fade-up">
+        <h2>Quiz Results</h2>
+        <p id="scoreDisplay"></p>
+        <div id="explanations"></div>
+        <button id="finishBtn" style="margin-top: 20px;">Finish</button>
+
+    </section>
+    <div id="saveDataMessage" style="margin-top:10px; font-weight:bold;"></div>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Before loading quiz.js -->
+    <script>
+window.quizAnswers = {
+    q1: "c",  // lim (x → 0) (sin 3x)/x = 3
+    q2: "b",  // lim (x → 0) (1 - cos 2x)/x² = 2
+    q3: "b",  // lim (x → ∞) (3x² + 5)/(2x² -7) = 3/2
+    q4: "b",  // lim (x → 0) (sin x)/x = 1
+    q5: "a",  // Continuity at x=a: limit equals function value
+    q6: "a",  // Derivative of x² = 2x
+    q7: "a",  // dy/dx means derivative of y w.r.t x
+    q8: "a",  // Derivative of e^x = e^x
+    q9: "a",  // Derivative of sin x = cos x
+    q10: "a", // Derivative of ln x = 1/x
+    q11: "b", // Product rule: u dv/dx + v du/dx
+    q12: "b", // Chain rule differentiates a function of a function
+    q13: "a", // dy/dx = (dy/dt) / (dx/dt)
+    q14: "a", // Implicit differentiation: dy/dx = -x/y
+    q15: "a", // Logarithmic diff used for f(x)^g(x)
+    q16: "a", // Second derivative of x³ = 6x
+    q17: "b", // Partial derivatives for multivariable functions
+    q18: "a", // ∂f/∂x means differentiate wrt x holding others constant
+    q19: "a", // ∂²f/∂x∂y means differentiate y first, then x
+    q20: "a"  // ∂²f/∂x² means differentiate twice wrt x
+};
+
+
+
+
+window.quizExplanations = {
+  Q1: "Limit of (sin 3x)/x as x approaches 0 can be rewritten as 3 * (sin 3x) / (3x). Since lim (sin u)/u = 1 as u → 0, here u = 3x → 0, so the limit is 3 * 1 = 3.",
+  
+  Q2: "Using the identity 1 - cos θ ≈ θ²/2 for small θ, (1 - cos 2x) ≈ (2x)² / 2 = 2x². Dividing by x² gives limit 2 as x → 0.",
+  
+  Q3: "For rational functions, the limit at infinity is ratio of highest degree terms. Here, numerator ~ 3x², denominator ~ 2x², so limit = 3/2.",
+  
+  Q4: "Standard limit lim (sin x)/x as x → 0 equals 1, fundamental in calculus for defining derivatives of trig functions.",
+  
+  Q5: "A function f is continuous at x=a if lim x→a f(x) = f(a), meaning no breaks, jumps, or holes at that point.",
+  
+  Q6: "Derivative of x² using first principles is lim h→0 [(x+h)² - x²]/h = lim h→0 [2xh + h²]/h = 2x.",
+  
+  Q7: "dy/dx denotes the derivative of y with respect to x, representing the instantaneous rate of change of y when x changes.",
+  
+  Q8: "Derivative of e^x is e^x because the exponential function's rate of change is proportional to its value at every point.",
+  
+  Q9: "Derivative of sin x is cos x, which follows from the definition of derivative and standard limits of sine function.",
+  
+  Q10: "Derivative of ln x is 1/x, derived from the inverse relation of exponential and logarithmic functions.",
+  
+  Q11: "Product rule states d(uv)/dx = u(dv/dx) + v(du/dx), allowing differentiation of products of two functions.",
+  
+  Q12: "Chain rule differentiates composite functions: if y = f(g(x)), then dy/dx = f'(g(x)) * g'(x).",
+  
+  Q13: "Parametric differentiation: if x = f(t), y = g(t), then dy/dx = (dy/dt) / (dx/dt), using derivatives w.r.t parameter t.",
+  
+  Q14: "Implicit differentiation finds dy/dx when y is defined implicitly, e.g., for x² + y² = 1, differentiate both sides w.r.t x to get dy/dx = -x/y.",
+  
+  Q15: "Logarithmic differentiation simplifies differentiation of functions like [f(x)]^g(x) by taking natural logs and differentiating both sides.",
+  
+  Q16: "Second derivative of x³: first derivative is 3x², second derivative is derivative of 3x² = 6x, showing curvature of function.",
+  
+  Q17: "Partial derivatives apply when functions depend on multiple variables; ∂f/∂x means differentiating w.r.t x while keeping other variables constant.",
+  
+  Q18: "Second order partial derivative ∂²f/∂x² means differentiating the partial derivative ∂f/∂x again w.r.t x, measuring curvature in x-direction.",
+  
+  Q19: "Mixed partial derivative ∂²f/∂x∂y means first differentiate w.r.t y, then differentiate that result w.r.t x.",
+  
+  Q20: "Second order partial derivative ∂²f/∂x² means differentiating function twice with respect to x, measuring rate of change of slope along x."
+};
+
+
+    </script>
+
+    <script type="module" src="../same.js"></script>
+</body>
+
+</html>

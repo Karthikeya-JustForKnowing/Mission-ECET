@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Questions - Doubt Sharing</title>
+  <link rel="stylesheet" href="all-questions.css" />
+</head>
+<body>
+    <canvas id="crystal-canvas"></canvas>
+
+  <header>
+    <h1>Doubt Sharing - All Questions</h1>
+  </header>
+
+  <main id="questionsList">
+    <!-- All questions will be dynamically rendered here -->
+  </main>
+
+  <!-- Floating Ask Question Button -->
+  <button id="askBtn" title="Ask a Question">+</button>
+
+  <!-- Modal for asking question -->
+  <div id="modal" class="modal">
+    <div class="modal-content" data-aos="zoom-in">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>Ask a Question</h2>
+      <form id="questionFormModal">
+        <label for="modalQuestionTitle">Title</label>
+        <input type="text" id="modalQuestionTitle" placeholder="Enter question title" required />
+        <label for="modalQuestionDesc">Description</label>
+        <textarea id="modalQuestionDesc" rows="4" placeholder="Explain your question..." required></textarea>
+        <button type="submit">Submit Question</button>
+      </form>
+    </div>
+  </div>
+
+  <a href="#" id="backArrow" title="Back to Main Page">&#8592;</a>
+
+<footer class="footercontainer">
+  <div class="footerdiv">
+    <h4>Just For Knowing</h4>
+    <p >Empowering ECET Aspirants for 2026 and beyond</p>
+    
+    <div class="footerdiv2">
+      <a href="https://www.youtube.com/@JustForKnowing" target="_blank">
+        <i class="material-icons footericon">ondemand_video</i>
+      </a>
+      <!-- You can add more icons like Instagram, Telegram etc. later -->
+    </div>
+
+    <p class="p2">&copy; 2025 Just For Knowing. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script type="module" src="all-questions.js"></script>
+</body>
+</html>

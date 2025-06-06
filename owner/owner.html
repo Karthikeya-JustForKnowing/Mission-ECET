@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Owner Dashboard</title>
+  <link rel="stylesheet" href="owner.css" />
+</head>
+<body>
+  <button id="backBtn" onclick="window.location.href='../index.html'"> ←</button>
+
+  <h1>Owner Dashboard</h1>
+
+  <!-- Login Form -->
+  <div id="loginStatus"></div>
+  <form id="loginForm">
+    <input
+      type="email"
+      id="email"
+      placeholder="Email"
+      required
+      autocomplete="username"
+    />
+    <input
+      type="password"
+      id="password"
+      placeholder="Password"
+      required
+      autocomplete="current-password"
+    />
+    <button type="submit">Login</button>
+    <div id="errorMsg"></div>
+  </form>
+
+  <!-- Logout Button -->
+  <button id="logoutBtn" class="hidden">Logout</button>
+
+  <!-- Owner Content (hidden until login) -->
+  <div id="ownerContent" class="hidden">
+    <nav>
+      <button data-tab="requests" class="tabBtn active">Access Requests</button>
+      <button data-tab="timetable" class="tabBtn">Upload Timetable</button>
+      <button data-tab="videos" class="tabBtn">Send Videos</button>
+      <button data-tab="chat" class="tabBtn">Chat with Users</button>
+      <button data-tab="users" class="tabBtn">Users List</button>
+    </nav>
+
+    <!-- Access Requests Tab -->
+    <section id="requests" class="tab active">
+      <h2>Access Requests</h2>
+      <ul id="accessRequestsList">Loading...</ul>
+    </section>
+
+    <!-- Upload Timetable Tab -->
+    <section id="timetable" class="tab">
+      <h2>Upload Daily Timetable</h2>
+      <form id="timetableForm">
+        <label>
+          Date:
+          <input type="date" id="timetableDate" required />
+        </label>
+        <div id="scheduleContainer">
+          <h3>Schedule Entries</h3>
+          <button type="button" id="addScheduleEntry">Add Entry</button>
+        </div>
+        <button type="submit">Upload Timetable</button>
+      </form>
+      <div id="timetableMsg"></div>
+    </section>
+
+    <!-- Send Videos Tab -->
+    <section id="videos" class="tab">
+      <h2>Send YouTube Videos to Users</h2>
+      <form id="videoForm">
+        <label>
+          User UID:
+          <input
+            type="text"
+            id="videoUserUid"
+            required
+            placeholder="User UID"
+          />
+        </label>
+        <label>
+          Video Title:
+          <input type="text" id="videoTitle" required />
+        </label>
+        <label>
+          Video URL:
+          <input
+            type="url"
+            id="videoUrl"
+            required
+            placeholder="https://youtube.com/..."
+          />
+        </label>
+        <label>
+          Description:
+          <textarea id="videoDescription"></textarea>
+        </label>
+        <button type="submit">Send Video</button>
+      </form>
+      <div id="videoMsg"></div>
+    </section>
+
+    <!-- Chat with Users Tab -->
+    <section id="chat" class="tab">
+      <h2>Chat with Users</h2>
+
+      <!-- Clickable list of approved users -->
+      <div id="chatUsersList">Loading users...</div>
+
+      <!-- Chat Window -->
+      <div>
+        <strong>Chatting With: <span id="chattingWith">None</span></strong>
+      </div>
+      <div id="ownerChatMessages"></div>
+
+      <input
+        type="text"
+        id="ownerChatInput"
+        placeholder="Type a message"
+        autocomplete="off"
+      />
+      <button id="ownerSendChatBtn">Send</button>
+    </section>
+
+    <!-- Approved Users List Tab -->
+    <section id="users" class="tab">
+      <h2>Users List</h2>
+      <ul id="usersListUL">Loading...</ul>
+      <h3>User Attendance</h3>
+      <ul id="attendanceList"></ul>
+    </section>
+  </div>
+
+  <!-- Firebase Initialization (modular SDK) -->
+  <script type="module" src="../login/firebase-init.js"></script>
+  <!-- Owner JS -->
+  <script type="module" src="owner.js"></script>
+</body>
+</html>

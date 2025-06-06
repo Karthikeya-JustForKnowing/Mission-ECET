@@ -1,0 +1,26 @@
+.spark {
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(circle, #fffacd, #ffd700, #ff69b4);
+  border-radius: 50%;
+  box-shadow: 0 0 15px 5px #ffd700;
+  animation: spark-glow 1.2s infinite ease-in-out;
+  margin-left: 15px;
+  margin-top: 10px;
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+}
+
+@keyframes spark-glow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+    box-shadow: 0 0 10px 2px #ffd700;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+    box-shadow: 0 0 25px 8px #ffffff;
+  }
+}

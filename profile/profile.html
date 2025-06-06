@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Profile</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+  <a href="../index.html" class="back-button">← Back to Home</a>
+
+  <main class="profile-wrapper">
+    <section class="profile-card">
+      <div class="profile-header">
+        <div class="avatar-section">
+          <img id="userPhoto" src="../profile.png" alt="Profile" />
+          <input type="file" id="photoUpload" hidden accept="image/*" />
+          <button id="changePhotoBtn">📸</button>
+        </div>
+        <div class="user-basic-info">
+          <h1 id="userName">Username</h1>
+          <p id="userEmail">email@example.com</p>
+        </div>
+      </div>
+
+      <div class="profile-details">
+        <div class="field">
+          <label>Change Username</label>
+          <input type="text" id="displayNameInput" placeholder="New username" />
+        </div>
+        <div class="field">
+          <label>Phone Number</label>
+          <input type="tel" id="phoneInput" placeholder="Phone number" />
+        </div>
+        <div class="field">
+          <label>Bio</label>
+          <textarea id="bioInput" rows="3" placeholder="Tell something cool..."></textarea>
+        </div>
+
+        <div class="buttons">
+          <button class="save-btn" id="updateProfileBtn">💾 Save Changes</button>
+          <button class="logout-btn" id="logoutBtn">🚪 Logout</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2>📊 Your Test Results</h2>
+      <div class="test-results" id="testResults">
+        <!-- JS will insert test cards here -->
+      </div>
+      <div id="dailyQuizResults"></div>
+
+    </section>
+  </main>
+
+  <script type="module" src="profile.js"></script>
+</body>
+</html>

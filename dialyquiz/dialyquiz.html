@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Daily Quiz</title>
+  <link rel="stylesheet" href="dialyquiz.css" />
+  <!-- Firebase -->
+</head>
+<body>
+    <span class="back-arrow" onclick="history.back()" title="Go Back" role="button" tabindex="0"
+     onkeypress="if(event.key === 'Enter') history.back();">←</span>
+    <!-- Instructions Screen -->
+  <div id="instruction-screen" class="container">
+    <h1>Daily Quiz Instructions</h1>
+    <ul>
+      <li>Read all questions carefully.</li>
+      <li>Choose the correct option for each question.</li>
+      <li>You have <strong>5 minutes</strong> to complete the quiz.</li>
+      <li>Quiz will be auto-submitted when time ends.</li>
+    </ul>
+    <button id="start-btn">Start Quiz</button>
+  </div>
+  <div id="login-warning" style="color: red; margin-top: 10px; display: none;">
+  Please log in to take the quiz.
+    <button id="login-btn" style="margin-left: 10px;">Login</button>
+
+</div>
+
+    
+
+  <div class="container" style="display: none;" id="quiz-screen">
+    <h1 id="quiz-title">Loading Quiz...</h1>
+    <div id="quiz-container"></div>
+    <button id="submit-btn">Submit</button>
+    <div id="result"></div>
+  </div>
+  <script type="module" src="dialyquiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personalized Dashboard</title>
+  <link rel="stylesheet" href="personalized.css" />
+</head>
+
+<body>
+  <div class="main">
+    <button id="backBtn" onclick="window.location.href='../index.html'"> ←</button>
+
+    <h1 class="welcome">Welcome to Your Personalized Dashboard</h1>
+    <div id="loginStatus">Checking authentication...</div>
+
+    <!-- Access Request Form -->
+    <div id="accessRequestDiv" class="hidden">
+      <h2 class="request">Request Access</h2>
+      <p class="details">Your account is not yet approved. Please fill this form to request access.</p>
+      <p class="details"> The Mentor will approve your Request and you will get a email when you you are approved</p>
+    </div>
+
+    <div id="main1" class="hidden">
+      <form id="accessRequestForm">
+        <div>
+          <label>Name:</label><br />
+          <input type="text" id="reqName" required />
+        </div>
+        <div>
+          <label>Branch:</label><br />
+          <input type="text" id="reqBranch" required />
+        </div>
+        <div>
+          <label>Email (readonly):</label><br />
+          <input type="email" id="reqEmail" readonly />
+        </div>
+        <button type="submit">Submit Request</button>
+      </form>
+      <div id="requestMsg"></div>
+    </div>
+    <!-- Personalized Dashboard -->
+  </div>
+  <div id="attend">
+    <h2 class="attendance" style="display: none;">📋 Attendance</h2>
+    <div id="attendanceSection">
+      <label>
+        <input type="checkbox" id="attendanceCheckbox" />
+        I am present today
+      </label>
+      <button id="submitAttendanceBtn">Submit Attendance</button>
+      <div id="attendanceStatus"></div>
+    </div>
+  </div>
+  <div id="dashboardDiv" class="hidden">
+
+    <button id="logoutBtn">Logout</button>
+
+    <h2 class="timetable">🗓️ Today's Timetable</h2>
+    <ul id="timetableList">
+      <li>Loading timetable...</li>
+    </ul>
+    <hr class="divider">
+    <h2 class="test">🧠 Special Test</h2>
+    <button id="startTestBtn">Start Test (Coming Soon)</button>
+    <hr class="divider">
+    <h2 class="chat">💬 Chat with Mentor</h2>
+    <div id="chatMessages"></div>
+    <input type="text" id="chatInput" autocomplete="off" placeholder="Type your message..." />
+    <button id="sendChatBtn">Send</button>
+    <hr class="divider">
+    <h2 class="video">🎥 Your YouTube Videos</h2>
+    <ul id="videoLinks">
+      <li>Loading videos...</li>
+    </ul>
+
+    <!-- <h2>🏆 Leaderboard</h2>
+<table id="leaderboardTable">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+  <tbody id="leaderboardBody">
+    ----as Leaderboard rows go here 
+  </tbody>
+</table> -->
+  </div>
+  <script type="module" src="personalized.js"></script>
+</body>
+
+</html>
