@@ -1,0 +1,101 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #f0f4ff, #e0f7fa);
+  color: #333;
+}
+
+header {
+  background: #0066cc;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.ask-doubt, .my-doubts {
+  padding: 30px;
+  max-width: 800px;
+  margin: auto;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  font-size: 1em;
+  border: 1px solid #aaa;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+#statusMessage {
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+}
+
+.doubt-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.doubt-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-left: 6px solid #007bff;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.doubt-card p {
+  margin: 5px 0;
+}
+
+.doubt-card .status {
+  font-weight: bold;
+  color: #ff8800;
+}
+
+.doubt-card .answered {
+  color: #28a745;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

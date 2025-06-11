@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Core Preparation</title>
+  <link rel="stylesheet" href="smart.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="header" data-aos="fade-down">
+    <h1>Smart Core Preparation</h1>
+    <p>Submit your core doubts and get expert video explanations</p>
+  </header>
+      <div id="accessBlockedWarning" style="display:none; color: red; font-weight: bold; margin-top: 10px;">
+  Your access to core preparation is blocked by the mentor you have to contact to resume your access.
+</div>
+
+  <!-- Main content container for JS toggle -->
+  <div id="mainContent" style="display:none;">
+    <section class="ask-doubt" data-aos="fade-up">
+
+
+      <h2>Ask Your Core Doubt</h2>
+      <textarea id="coreQuestion" placeholder="Type your core doubt here..."></textarea>
+      <select id="subjectSelect">
+        <option value="">Select Subject</option>
+        <option value="C Programming">C Programming</option>
+        <option value="Data Structures">Data Structures</option>
+        <option value="Java">Java</option>
+        <option value="DBMS">DBMS</option>
+      </select>
+      <button id="submitBtn" onclick="submitDoubt()">Submit for Review</button>
+      <!-- <p id="statusMessage"></p> -->
+    </section>
+
+    <section class="my-doubts" data-aos="fade-up">
+      <h2>My Asked Doubts</h2>
+      <div id="doubtList" class="doubt-list"></div>
+    </section>
+  </div>
+
+  <!-- Status message for showing if user not logged in or page disabled -->
+  <p id="statusMessage"></p>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script type="module" src="smart.js"></script>
+    <script type="module" src="../session-end-tracker.js" defer></script>
+
+</body>
+</html>

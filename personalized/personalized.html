@@ -53,15 +53,24 @@
       <div id="attendanceStatus"></div>
     </div>
   </div>
+  <button id="logoutBtn">Logout</button>
+
   <div id="dashboardDiv" class="hidden">
 
-    <button id="logoutBtn">Logout</button>
+    <div class="time">
+      <h2 class="timetable">🗓️ Today's Timetable</h2>
+      <ul id="timetableList">
+        <li>Loading timetable...</li>
+      </ul>
+    </div>
+    <hr class="divider">
 
-    <h2 class="timetable">🗓️ Today's Timetable</h2>
-    <ul id="timetableList">
-      <li>Loading timetable...</li>
+    <h2 class="video">🎥 Your YouTube Videos</h2>
+    <ul id="videoLinks">
+      <li>Loading videos...</li>
     </ul>
     <hr class="divider">
+
     <h2 class="test">🧠 Special Test</h2>
     <button id="startTestBtn">Start Test (Coming Soon)</button>
     <hr class="divider">
@@ -69,11 +78,7 @@
     <div id="chatMessages"></div>
     <input type="text" id="chatInput" autocomplete="off" placeholder="Type your message..." />
     <button id="sendChatBtn">Send</button>
-    <hr class="divider">
-    <h2 class="video">🎥 Your YouTube Videos</h2>
-    <ul id="videoLinks">
-      <li>Loading videos...</li>
-    </ul>
+
 
     <!-- <h2>🏆 Leaderboard</h2>
 <table id="leaderboardTable">
@@ -90,6 +95,8 @@
 </table> -->
   </div>
   <script type="module" src="personalized.js"></script>
+  <script type="module" src="../session-end-tracker.js" defer></script>
+
 </body>
 
 </html>

@@ -318,22 +318,3 @@ button.rejectBtn:hover {
     background-color: #c82333;
 }
 
-/* ===== Form Inputs & Buttons (global) ===== */
-input,
-button {
-  width: 100%;
-  padding: 10px;
-  margin: 0.5rem 0;
-  box-sizing: border-box;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: 1.5px solid #ccc;
-  transition: border-color 0.3s ease;
-}
-
-input:focus,
-button:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
-}

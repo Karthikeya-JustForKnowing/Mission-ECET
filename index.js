@@ -494,6 +494,18 @@ function closeAltList() {
   openAltCategory = null;
 }
 
+// this is light theme code
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('themeToggle');
+  const icon = toggleBtn.querySelector('.material-icons');
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    icon.textContent = document.body.classList.contains('light-theme') ? 'dark_mode' : 'light_mode';
+  });
+});
+
+
 
 // Attach toggle listeners
 logoButton.addEventListener('click', togglePopup);

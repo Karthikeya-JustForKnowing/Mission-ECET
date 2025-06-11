@@ -8,6 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="Untitled_design-removebg-preview.png">
+
+
 
 
 
@@ -21,8 +26,9 @@
 </video> -->
 
   <div class="center-box">
-    <h1 class="name" data-aos="fade-up">Just For Knowing</h1>
-    <p class="subtitle" data-aos="fade" data-aos-duration="50000">presents</p>
+    <h1 class="name"     data-aos="fade-up" >Just For Knowing</h1>
+    <p class="subtitle"  data-aos-duration="50000">presents</p>
+    <!-- data-aos="fade" -->
     <h2 class="brand">ECET MISSION 2026</h2>
     <p class="info"> Unlock Your True Potential — Mission ECET 2026 is your
       ultimate companion to crack the exam with smart strategies, expert resources,
@@ -45,7 +51,7 @@
       <li><a href="login/login.html">Login</a></li>
       <li><a href="login/signup.html">Signup</a></li>
       <li><a href="https://www.youtube.com/@JustForKnowing" target="_blank">Subscribe</a></li>
-      <li><a href="owner/owner.html">Owner Login</a></li>
+      <li><a href="owner/owner.html">Mentor Login</a></li>
     </ul>
   </div>
   <div class="curve"></div>
@@ -110,6 +116,9 @@
       </li>
     </ul>
   </div>
+    <div id="themeToggle" class="theme-toggle" title="Toggle Theme">
+    <span class="material-icons">light_mode</span>
+  </div>
 
 
   <!-- Curve between sections (normal orientation) -->
@@ -120,7 +129,8 @@
   </div>
 
   <!-- New Section After Curve -->
-  <div class="after-curve-section" data-aos="fade-up">
+  <div class="after-curve-section" >    
+     <!-- data-aos="fade-up" -->
     <h2 class="brand-name">ECET MISSION 2026</h2>
 
     <div class="brand-details">
@@ -138,7 +148,9 @@
     </div>
   </div>
 
-  <div class="bridge-text" data-aos="fade-in" data-aos-delay="200">
+  <div class="bridge-text"  >
+    <!-- data-aos-delay="200" -->
+    <!-- data-aos="fade-in" -->
     <!-- <p>This journey starts with mastering each subject. Select a category below to begin.</p> -->
 
     <p> Start your ECET preparation with Just For Knowing</p>
@@ -146,8 +158,8 @@
     <h1> Test Series 1</h1>
   </div>
 
-  <section class="subjects-section" data-aos="fade-up">
-    <div class="glow"></div>
+  <section class="subjects-section" >
+    <!-- <div class="glow"></div> -->
     <p> The Remaining Test Links will be Upadated shorty</p>
     <!-- <h3>Choose a Subject Area</h3> -->
     <h3> Choose a chapter To Take Test</h3>
@@ -163,18 +175,19 @@
     <h1> Test Series 2</h1>
   </div>
 
-  <section class="chapters-section" data-aos="fade-up">
+  <section class="chapters-section" >
+    <!-- data-aos="fade-up" -->
     <div class="glowing-dot"></div>
-    <p>This Tests Need Indepth Knowledge Of The Concepts </p>
+    <p>This Tests Need In depth Knowledge Of The Concepts </p>
     <!-- <h4>Choose a Chapter To Prepare</h4> -->
     <h3> Choose a Chapter to Take Test</h3>
-<div class="alt-buttons">
-  <button class="alt-subject-btn" data-category="math">Mathematics</button>
-  <button class="alt-subject-btn" data-category="physics">Physics</button>
-  <button class="alt-subject-btn" data-category="chemistry">Chemistry</button>
-</div>
+    <div class="alt-buttons">
+      <button class="alt-subject-btn" data-category="math">Mathematics</button>
+      <button class="alt-subject-btn" data-category="physics">Physics</button>
+      <button class="alt-subject-btn" data-category="chemistry">Chemistry</button>
+    </div>
 
-<div id="altSubjectList"></div>
+    <div id="altSubjectList"></div>
 
   </section>
   <!-- AI Chat Search Bar 
@@ -191,7 +204,9 @@
   <div class="help">
     <h4> Have Doubts Connect with your Friends To get Answered</h4>
   </div>
-  <section class="doubts-section" data-aos="fade-up" style="margin: 40px 20px;">
+  <section class="doubts-section" >
+    <!-- style="margin: 40px 20px;" -->
+    <!-- data-aos="fade-up"  -->
     <h3>Ask Your Doubt</h3>
     <form id="questionForm">
       <input id="questionTitle" type="text" placeholder="Question Title" required />
@@ -208,8 +223,11 @@
 
     </div>
 
+
+
+
+
   </section>
-  <script type="module" src="index.js" defer></script>
 
 
   <footer class="footercontainer">
@@ -228,8 +246,18 @@
     </div>
   </footer>
 
+
+    <div class="floating-icons">
+      <span class="material-symbols-outlined">books_movies_and_music</span>
+      <span class="material-symbols-outlined">library_books</span>
+      <span class="material-symbols-outlined">preliminary</span>
+    </div>
+  <script type="module" src="index.js" defer></script>
+  <script type="module" src="session-end-tracker.js" defer></script>
+
   <!-- Code injected by live-server -->
   <script>
+
     // <![CDATA[  <-- For SVG support
     if ('WebSocket' in window) {
       (function () {

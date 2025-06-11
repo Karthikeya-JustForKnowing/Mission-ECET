@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Owner Dashboard</title>
   <link rel="stylesheet" href="owner.css" />
 </head>
+
 <body>
   <button id="backBtn" onclick="window.location.href='../index.html'"> ←</button>
 
@@ -14,20 +16,8 @@
   <!-- Login Form -->
   <div id="loginStatus"></div>
   <form id="loginForm">
-    <input
-      type="email"
-      id="email"
-      placeholder="Email"
-      required
-      autocomplete="username"
-    />
-    <input
-      type="password"
-      id="password"
-      placeholder="Password"
-      required
-      autocomplete="current-password"
-    />
+    <input type="email" id="email" placeholder="Email" required autocomplete="username" />
+    <input type="password" id="password" placeholder="Password" required autocomplete="current-password" />
     <button type="submit">Login</button>
     <div id="errorMsg"></div>
   </form>
@@ -43,10 +33,21 @@
       <button data-tab="videos" class="tabBtn">Send Videos</button>
       <button data-tab="chat" class="tabBtn">Chat with Users</button>
       <button data-tab="users" class="tabBtn">Users List</button>
+      <button class="tabBtn" data-tab="manageUsers">Manage Users</button>
+      <!-- Add to your existing tab buttons -->
+      <button class="tabBtn" data-tab="smartQuestionsTab">Smart Page Questions</button>
+      <button class="tabBtn" data-tab="smartApprovalsTab">Smart Page Approvals</button>
+      <button class="tabBtn" data-tab="analyticsTab">Analytics</button>
+
+
+
+
     </nav>
 
     <!-- Access Requests Tab -->
     <section id="requests" class="tab active">
+
+
       <h2>Access Requests</h2>
       <ul id="accessRequestsList">Loading...</ul>
     </section>
@@ -55,6 +56,11 @@
     <section id="timetable" class="tab">
       <h2>Upload Daily Timetable</h2>
       <form id="timetableForm">
+        <input type="checkbox" id="timetableSendToAllCheckbox" />
+        Send video to ALL users
+        <!-- Add UID input to timetable form -->
+        <input type="text" id="timetableUserUid" placeholder="Enter User UID" required>
+
         <label>
           Date:
           <input type="date" id="timetableDate" required />
@@ -72,14 +78,14 @@
     <section id="videos" class="tab">
       <h2>Send YouTube Videos to Users</h2>
       <form id="videoForm">
+
+        <label>
+          <input type="checkbox" id="sendToAllCheckbox" />
+          Send video to ALL users
+        </label>
         <label>
           User UID:
-          <input
-            type="text"
-            id="videoUserUid"
-            required
-            placeholder="User UID"
-          />
+          <input type="text" id="videoUserUid" required placeholder="User UID" />
         </label>
         <label>
           Video Title:
@@ -87,12 +93,7 @@
         </label>
         <label>
           Video URL:
-          <input
-            type="url"
-            id="videoUrl"
-            required
-            placeholder="https://youtube.com/..."
-          />
+          <input type="url" id="videoUrl" required placeholder="https://youtube.com/..." />
         </label>
         <label>
           Description:
@@ -116,12 +117,7 @@
       </div>
       <div id="ownerChatMessages"></div>
 
-      <input
-        type="text"
-        id="ownerChatInput"
-        placeholder="Type a message"
-        autocomplete="off"
-      />
+      <input type="text" id="ownerChatInput" placeholder="Type a message" autocomplete="off" />
       <button id="ownerSendChatBtn">Send</button>
     </section>
 
@@ -132,11 +128,39 @@
       <h3>User Attendance</h3>
       <ul id="attendanceList"></ul>
     </section>
+
+    <section id="manageUsers" class="tab">
+      <h3>Manage Users</h3>
+      <div id="manageUsersList">Loading users...</div>
+    </section>
+
+    <!-- Smart Questions Tab -->
+    <div id="smartQuestionsTab" class="tab">
+      <h3>Answer User Doubts</h3>
+      <ul id="smartQuestionsList"></ul>
+    </div>
+
+    <!-- Smart Approvals Tab -->
+    <div id="smartApprovalsTab" class="tab">
+      <h3>Smart Page Access Requests</h3>
+      <ul id="smartPageAccessList"></ul>
+    </div>
+    <section id="analyticsTab" class="tab">
+  <h2>Site Analytics</h2>
+  <div id="analyticsContent">Loading...</div>
+</section>
+
+
   </div>
+
+
 
   <!-- Firebase Initialization (modular SDK) -->
   <script type="module" src="../login/firebase-init.js"></script>
   <!-- Owner JS -->
   <script type="module" src="owner.js"></script>
+    <script type="module" src="../session-end-tracker.js" defer></script>
+
 </body>
+
 </html>

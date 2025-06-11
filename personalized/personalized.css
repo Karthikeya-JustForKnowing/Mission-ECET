@@ -4,13 +4,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 /* 
-html, body {
-  width: 100%;
-  overflow: hidden;  
-  font-family: Arial, sans-serif;
-} */
+  html, body {
+    width: 100%;
+    overflow: hidden;  
+    font-family: Arial, sans-serif;
+  } */
 
 
 body {
@@ -183,7 +182,7 @@ input[type=email]:focus {
 /* Timetable */
 #timetableList li {
   background: white;
-  margin-bottom: 12px;
+  margin-bottom: 52px;
   padding: 12px 20px;
   border-radius: 10px;
   border-left: 6px solid #4a90e2;
@@ -298,9 +297,9 @@ margin-bottom: 4vw;
 }
 .divider{
 
-margin-top: 8vw;
-  
-margin-bottom: 4vw;
+margin-top: 12vw;
+
+margin-bottom: 13vw;
 }
 
 
@@ -324,9 +323,15 @@ margin-bottom: 4vw;
   cursor: pointer;
   border-radius: 5px;
 }
-
-
 #sendChatBtn{background-color: #48a34a;border: none;border-radius: 6vw;width: 13vw;height: 4vw;margin-top: 5vw;margin-left: 4vw;}
+
+
+.time{
+  background-color: green;
+}
+
+
+
 /* Responsive tweaks */
 @media (max-width: 600px) {
   body {

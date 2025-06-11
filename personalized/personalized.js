@@ -114,6 +114,8 @@ console.log("userData.approved =", userData?.approved);
 
     setupDashboard(user.uid);
     await checkAttendance(user.uid);
+    await showCompletedChapters();  // <-- Add this here, after setupDashboard and checkAttendance
+
   }
 });
 
@@ -179,13 +181,19 @@ async function setupDashboard(uid) {
 async function loadTimetable() {
   timetableList.innerHTML = "<li>Loading timetable...</li>";
   const today = formatDate(new Date());
+  console.log("Looking for timetable:", today);  // <-- Add this
+
   const timetableDocRef = doc(db, 'timetables', today);
   const docSnap = await getDoc(timetableDocRef);
+
+  console.log("Timetable doc exists:", docSnap.exists());
+  console.log("Timetable doc data:", docSnap.data());  // <-- Add this
 
   if (!docSnap.exists() || !(docSnap.data().schedule?.length)) {
     timetableList.innerHTML = "<li>No timetable for today.</li>";
     return;
   }
+
 
   timetableList.innerHTML = "";
   docSnap.data().schedule.forEach((item, index) => {
@@ -208,6 +216,11 @@ async function loadTimetable() {
     timetableList.appendChild(li);
   });
 }
+
+
+  
+
+
 
 async function loadVideos(uid) {
   videoLinksList.innerHTML = "<li>Loading videos...</li>";
@@ -355,6 +368,84 @@ submitAttendanceBtn.addEventListener('click', async () => {
   }
 });
 
+const subjects = {
+  math: [ "Algebra", "Trignometry", "Co-cordinate Geometry", "Diffrential Calculus", "Applications of Derivatives", "Integral Calculus", 
+           "Differential Equations", "Graph Theory and Probability", "Statistics"
+         ],
+  physics: ["Units and Measurements", "Statics", "Gravitation", "Concepts of Energy", "Thermal Physics", "Sound", "Electricity and Magnetism",
+    "Modern Physics"
+   ],
+  chemistry: [ "Fundamentals Of Chemistry", "Solutions, Acids and bases", "Electrochemistry", "corrosion", "Water Treatment", 
+    "Polymers and Engineering Materials",  "Fuels", "Environmental Studies"
+  ]
+};
+
+
+async function showCompletedChapters() {
+  if (!currentUser) return;  // safety check
+
+  // Fetch user's completed progress from Firestore
+  const progressDocRef = doc(db, 'users', currentUser.uid, 'progress', 'chapters');
+  const progressDocSnap = await getDoc(progressDocRef);
+  const savedProgress = progressDocSnap.exists() ? progressDocSnap.data() : {};
+
+  // Container div to put the completed chapters list in your HTML
+  // You should add this container div in your HTML with id="completedChaptersContainer"
+  let container = document.getElementById('completedChaptersContainer');
+  if (!container) {
+    // If not present, create and append at end of dashboardDiv
+    container = document.createElement('div');
+    container.id = 'completedChaptersContainer';
+    container.style.marginTop = '20px';
+    dashboardDiv.appendChild(container);
+  }
+
+  // Clear previous content
+  container.innerHTML = '';
+
+  // Add heading
+  const heading = document.createElement('h3');
+  heading.textContent = "Completed Chapters";
+  container.appendChild(heading);
+
+  // Create the collapsible dropdown style for each subject (optional)
+  for (const [subject, chapters] of Object.entries(subjects)) {
+    // Subject heading
+    const subjHeader = document.createElement('h4');
+    subjHeader.textContent = subject.toUpperCase();
+    subjHeader.style.cursor = 'pointer';
+    subjHeader.style.marginTop = '10px';
+    container.appendChild(subjHeader);
+
+    // Content div for chapters
+    const contentDiv = document.createElement('div');
+    contentDiv.style.paddingLeft = '20px';
+
+    chapters.forEach(chapter => {
+      const label = document.createElement('label');
+      label.style.display = 'block';
+      label.style.marginBottom = '4px';
+
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.disabled = true;  // cannot uncheck
+
+      // Set checked if completed in savedProgress
+      if (savedProgress[subject] && savedProgress[subject][chapter] === true) {
+        checkbox.checked = true;
+      }
+
+      label.appendChild(checkbox);
+      label.append(` ${chapter}`);
+
+      contentDiv.appendChild(label);
+    });
+
+    container.appendChild(contentDiv);
+  }
+}
+
+
 
 // async function loadLeaderboard() {
 //   leaderboardBody.innerHTML = "<tr><td colspan='3'>Loading leaderboard...</td></tr>";
@@ -397,4 +488,6 @@ submitAttendanceBtn.addEventListener('click', async () => {
 //     console.error("Error loading leaderboard:", error);
 //   }
 // }
+
+
 
