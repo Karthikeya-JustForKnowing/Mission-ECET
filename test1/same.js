@@ -1,6 +1,6 @@
 // quiz.js
 
-import { auth, db } from "../../login/firebase-init.js";
+import { auth, db } from "../login/firebase-init.js";
 import {
   collection,
   addDoc,
